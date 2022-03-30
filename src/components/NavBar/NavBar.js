@@ -2,6 +2,8 @@ import './NavBar.css'
 //import { NavBar, NavDropdown, } from 'react-bootstrap';
 import {Navbar, Nav, Container, NavDropdown} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CartWidget from '../CartWidget/CartWidget';
 
 const NavBartincho = () => {
     return(<>
@@ -24,14 +26,12 @@ const NavBartincho = () => {
                     </NavDropdown>
                     </Nav>
                     <Nav>
-                    <Nav.Link href="#deets">More deets</Nav.Link>
-                    <Nav.Link eventKey={2} href="#memes">
-                        Dank memes
-                    </Nav.Link>
+                        <Nav.Link href="#cart"><CartWidget/></Nav.Link>      
                     </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+        
         </>
         
     )
