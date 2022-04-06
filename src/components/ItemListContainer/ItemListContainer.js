@@ -1,23 +1,25 @@
-import React,{useState} from 'react';
-import ItemCount from '../ItemCount/ItemCount';
+import React,{ useState } from 'react';
+import { useEffect } from 'react'
+import { getProducts }  from '../../mock/products'
+import ItemList from '../ItemList/ItemList'
 
-const ItemListContainer = () => {
-    const [count, setCount] = useState(1);
-    
-    const onAdd = (condition) => {
-        if(condition === '-'){
-            setCount(count - 1);  
-        } 
-        if (condition === '+'){
-            setCount(count + 1);  
-        }
-    }; 
+import {Navbar, Nav, Container, NavDropdown, Card, Button} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-    const stock = 10;
-    const initial = 1;
+const ItemListContainer = (props) => {
+    const [products, setProducts] = useState ([])
+
+    useEffect  (()  => {
+        getProducts().then (prods => {
+            setProducts(prods)
+        }).catch (error => {
+            console.log(error)
+        })
+    }, [])
+ 
     return(
         <>
-        <ItemCount onAdd={onAdd} stock={stock} initial={initial} count={count}/> 
+        <ItemList products={products}/>
         </>
 
     )
