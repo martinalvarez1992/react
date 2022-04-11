@@ -1,6 +1,6 @@
 const products = [
     {
-      id: 1,
+      id: '1',
       name: 'Jade Plant Mini',
       color: 'bg-yellow-500',
       textColor: 'text-yellow-500',
@@ -15,7 +15,7 @@ const products = [
       stock: 7,
     },
     {
-      id: 2,
+      id: '2',
       name: 'Broken Heart Plant',
       color: 'bg-blue-500',
       textColor: 'text-blue-500',
@@ -29,7 +29,7 @@ const products = [
       stock: 2
     },
     {
-      id: 3,
+      id: '3',
       name: 'Money Plant Golden',
       color: 'bg-purple-500',
       textColor: 'text-purple-500',
@@ -43,7 +43,7 @@ const products = [
       stock: 1
     },
     {
-        id: 4,
+        id: '4',
         name: 'Jade Plant Mini',
         color: 'bg-yellow-500',
         textColor: 'text-yellow-500',
@@ -58,7 +58,7 @@ const products = [
         stock: 7,
       },
       {
-        id: 5,
+        id: '5',
         name: 'Broken Heart Plant',
         color: 'bg-blue-500',
         textColor: 'text-blue-500',
@@ -72,7 +72,7 @@ const products = [
         stock: 2
       },
       {
-        id: 6,
+        id: '6',
         name: 'Money Plant Golden',
         color: 'bg-purple-500',
         textColor: 'text-purple-500',
@@ -93,4 +93,14 @@ const products = [
               resolve (products)
           }, 2000)
       })
+  }
+
+  export const getProductById = (id) => {
+    return new Promise (resolve => {
+        setTimeout(() => {
+               resolve(products.find((p) => p.id === id))
+            }
+             )
+        }, 2000)
+  
   }
