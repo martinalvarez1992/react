@@ -1,6 +1,7 @@
 const products = [
     {
       id: '1',
+      category: 'plantA',
       name: 'Jade Plant Mini',
       color: 'bg-yellow-500',
       textColor: 'text-yellow-500',
@@ -16,6 +17,7 @@ const products = [
     },
     {
       id: '2',
+      category: 'plantC',
       name: 'Broken Heart Plant',
       color: 'bg-blue-500',
       textColor: 'text-blue-500',
@@ -30,6 +32,7 @@ const products = [
     },
     {
       id: '3',
+      category: 'plantC',
       name: 'Money Plant Golden',
       color: 'bg-purple-500',
       textColor: 'text-purple-500',
@@ -44,6 +47,7 @@ const products = [
     },
     {
         id: '4',
+        category: 'plantA',
         name: 'Jade Plant Mini',
         color: 'bg-yellow-500',
         textColor: 'text-yellow-500',
@@ -59,6 +63,7 @@ const products = [
       },
       {
         id: '5',
+        category: 'plantB',
         name: 'Broken Heart Plant',
         color: 'bg-blue-500',
         textColor: 'text-blue-500',
@@ -73,6 +78,7 @@ const products = [
       },
       {
         id: '6',
+        category: 'plantA',
         name: 'Money Plant Golden',
         color: 'bg-purple-500',
         textColor: 'text-purple-500',
@@ -87,11 +93,15 @@ const products = [
       },
   ];
   
-  export const getProducts = () => {
+  export const getProducts = (category) => {
       return new Promise (resolve => {
           setTimeout(() => {
-              resolve (products)
-          }, 2000)
+              resolve (
+                category
+                ? products.filter((p) => p.category === category)
+                : products
+              )
+          }, 500)
       })
   }
 
@@ -101,6 +111,6 @@ const products = [
                resolve(products.find((p) => p.id === id))
             }
              )
-        }, 2000)
+        }, 500)
   
   }

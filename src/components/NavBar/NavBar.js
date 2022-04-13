@@ -5,18 +5,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CartWidget from '../CartWidget/CartWidget';
 
+
 const NavBartincho = () => {
     return(<>
  
         
         <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">Tienda Online</Navbar.Brand>
+                <Navbar.Brand href="/">Tienda Online</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                    <Nav.Link href="#features">Celulares</Nav.Link>
-                    <Nav.Link href="#pricing">Laptops</Nav.Link>
+                    <Nav.Link href="/">Lista</Nav.Link>
+                    <Nav.Link href="/category/plantA">Plantas A</Nav.Link>
+                    <Nav.Link href="/category/plantB">Plantas B</Nav.Link>
                     <NavDropdown title="Otros" id="collasible-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>

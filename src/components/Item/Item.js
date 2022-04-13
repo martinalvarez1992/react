@@ -10,8 +10,9 @@ const Item = ({id, name, image, description}) => {
             <Card.Title style={{overflow: 'hidden' , textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{name}</Card.Title>
             <Card.Text style={{overflow: 'hidden' , textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} >
              {description}
+
             </Card.Text>
-            <Button style={{width: '100%'}} variant="primary">Ver detalle</Button>
+            <Button style={{width: '100%'}} variant="primary" href={`/item/${id}`}  >Ver detalle</Button>
         </Card.Body>
         </Card>       
         </>

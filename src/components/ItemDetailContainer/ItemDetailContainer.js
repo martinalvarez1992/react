@@ -5,11 +5,13 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 
 
+
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState ([])
+    const {productId} = useParams()
 
     useEffect  (()  => {
-        getProductById('2').then (prod => {
+        getProductById(productId).then (prod => {
             console.log(prod)
             setProduct(prod)
         })
@@ -17,7 +19,11 @@ const ItemDetailContainer = () => {
  
     return(
         <>
-        <ItemDetail {...product}/>
+        {
+        product 
+        ? <ItemDetail {...product}/> 
+        : <h1>Producto no existe</h1>
+        }   
         </>
 
     )
