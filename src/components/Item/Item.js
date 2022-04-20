@@ -1,7 +1,11 @@
 import {Navbar, Nav, Container, NavDropdown, Card, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+  
+
 
 const Item = ({id, name, image, description, price}) => {
+    
+     
     return(
         <>
      <Card  key={id} style={{maxWidth: '16rem' , margin: '10px', marginTop: '10px', border: '2px solid #e6e6e6' }}>
