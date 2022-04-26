@@ -5,11 +5,19 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Cart from './components/Cart/Cart'
+import React ,{ useEffect, useState, useContext } from 'react';
+import { createContext } from 'react';
+import { CartContextProvider }  from './context/CartContext';
+
+// export const Context = createContext()
 
 function App() {
+  const [cart, setCart] = useState ([])
+  console.log(cart)
 
   return (
   <> 
+    <CartContextProvider>
     <BrowserRouter>
       <NavBartincho/>
       <Routes>
@@ -19,7 +27,8 @@ function App() {
         <Route path='/category/:categoryId' element= {<ItemListContainer/>} />
         <Route path='*' element= {<h1>404 NOT FOUND</h1>} />
       </Routes>
-    </BrowserRouter>    
+    </BrowserRouter>
+   </CartContextProvider>    
    
   </>
      
