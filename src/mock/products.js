@@ -93,6 +93,19 @@ const products = [
       },
   ];
   
+  const categories = [
+    {id: 'plantA', description: 'plantA'},
+    {id: 'plantB', description: 'plantB'},
+    {id: 'plantC', description: 'plantC'}
+]
+
+  export const getCategories = () => {
+      return new Promise(resolve => {
+          setTimeout(() => {
+              resolve(categories)
+          }, 500)
+      })
+  }
   export const getProducts = (category) => {
       return new Promise (resolve => {
           setTimeout(() => {
