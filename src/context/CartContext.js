@@ -7,7 +7,12 @@ export const CartContextProvider = ({ children  }) => {
     console.log (cart)
 
     const addItem = (productToAdd) => {
-        setCart([...cart, productToAdd])
+        if (isInCart(productToAdd.id)){
+            console.log('El producto ya se encuentra en el carrito')
+        } else {
+            setCart([...cart, productToAdd]) 
+        }
+       
     }
 
     const getQuantity = () => {
