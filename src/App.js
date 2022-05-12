@@ -8,6 +8,7 @@ import Cart from './components/Cart/Cart'
 import React ,{ useEffect, useState, useContext } from 'react';
 import { createContext } from 'react';
 import { CartContextProvider }  from './context/CartContext';
+import Checkout from './components/Checkout/Checkout.js';
 
 // export const Context = createContext()
 
@@ -25,6 +26,7 @@ function App() {
         <Route path='/cart' element= {<Cart/>} />
         <Route path='/item/:productId' element= {<ItemDetailContainer/>} />
         <Route path='/category/:categoryId' element= {<ItemListContainer/>} />
+        <Route path="/checkout" element={<Checkout/>}/>
         <Route path='*' element= {<h1>404 NOT FOUND</h1>} />
       </Routes>
     </BrowserRouter>

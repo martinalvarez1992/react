@@ -41,7 +41,7 @@ const ItemDetail = ({id, name, image, category, description, stock, price}) => {
                         <h5 className="card-title">${price}</h5>
                         <p className="card-title">{description}</p>
                         <h5 className="card-title">{stock}</h5>
-                        {isInCart(id) ? <Link to='/cart'> Ir al carrito </Link> : <ItemCount handleAdd={handleAdd} stock={8} initial={1} /> }
+                        {isInCart(id) ? <Link to='/cart'> Ir al carrito </Link> : <ItemCount handleAdd={handleAdd} stock={stock} initial={1} /> }
 
                     </Col>
                 </Row>
