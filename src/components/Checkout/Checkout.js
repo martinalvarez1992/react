@@ -9,7 +9,7 @@ import CartContext from "../../context/CartContext";
 
 const Checkout = ()  => {
     const [loading, setLoading] = useState(false)
-    const { cart, removeItem, getTotal, getQuantity } = useContext(CartContext)
+    const { cart, removeItem, getTotal, getQuantity, clearCart } = useContext(CartContext)
     const [orderStatus, setOrderStatus] = useState(null)
     const [orderId, setOrderId] = useState(null)
 
@@ -66,6 +66,7 @@ const Checkout = ()  => {
                       console.log(`El id de la orden es ${id}`)
                       setOrderId(`${id}`)
                       setOrderStatus('confirmed')
+                      clearCart()
                        
                   }).catch(error => {
                       console.log(error)
