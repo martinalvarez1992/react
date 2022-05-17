@@ -1,6 +1,6 @@
 # MercadoVerde 🌿
 MercadoVerde es un ecommerce que incluye categorias de plantas, arbustos y plantas artificiales. En el mismo podras seleccionar los productos que mas te gusten, seleccionar la cantidad, agregar al carrito y generar una orden de compra de los mismos. Este proyecto fue realizado para el curso de React - [CoderHouse]
-## Intalacion
+## Instalación
 Para instalar el proyecto: ejecutar los siguientes comandos en terminal
 ```sh
 git clone  https://github.com/martinalvarez1992/react.git
@@ -9,7 +9,7 @@ git clone  https://github.com/martinalvarez1992/react.git
 npm install 
 npm start
 ```
-## Tecnologias 💻 
+## Tecnología 💻 
 El proyecto utiliza las siguientes tecnologias
 - Javascript 
 - React JS
