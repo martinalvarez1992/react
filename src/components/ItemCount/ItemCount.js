@@ -26,22 +26,16 @@ if(stock === 0) {
   return <button className='Option' disabled>No hay stock</button>
 }
 
- 
-    
-    // const stock = 10;
-    // const initial = 1;
     return (
     <>
-  
-    <ButtonGroup aria-label="Contador">
-        <Button variant="secondary" onClick={decrement}>-</Button>
-        <Button variant="secondary">{count}</Button>
-        <Button variant="secondary"  onClick={increment}>+</Button>
-    </ButtonGroup>
-        <Button onClick={() => {handleAdd(count)}}>Agregar al carrito</Button>   
- 
-
-
+      <div className="mt-1"> 
+        <ButtonGroup aria-label="Contador">
+            <Button variant="secondary" onClick={decrement}>-</Button>
+            <Button variant="secondary">{count}</Button>
+            <Button variant="secondary"  onClick={increment}>+</Button>
+        </ButtonGroup>
+        <Button className="ms-1" onClick={() => {handleAdd(count)}}>Agregar al carrito</Button>
+      </div> 
     </>
   
     )

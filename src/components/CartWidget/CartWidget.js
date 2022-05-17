@@ -11,8 +11,8 @@ import { Link } from 'react-router-dom';
   return(
     <>
 
-    <Link to='/cart' className="CartWidget">
-       {getQuantity()} <FontAwesomeIcon icon={faCartShopping} />
+    <Link to='/cart' className="CartWidget" class="btn btn btn-outline-primary">
+        <FontAwesomeIcon icon={faCartShopping} /> {getQuantity()}  
     </Link>
     </>
   )

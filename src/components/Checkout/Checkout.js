@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import CartContext from "../../context/CartContext";
-import {Navbar, Nav, Container, Row, Col, NavDropdown, Card, Button, Form} from 'react-bootstrap';
+import { Navbar, Nav, Container, Row, Col, NavDropdown, Card, Button, Form } from 'react-bootstrap';
 import { addDoc, collection, getDoc, getDocs, writeBatch, query, where, documentId} from 'firebase/firestore'
 import { firestoreDb } from'../../services/firebase/index'
 
@@ -85,29 +85,33 @@ const Checkout = ()  => {
 
  
   
-    return (<>
-        <Form onSubmit={submitHandler}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Nombre</Form.Label>
-            <Form.Control name="nombre" type="text" placeholder="Ingresar nombre" />
- 
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Tel</Form.Label>
-            <Form.Control name="telefono" type="text" placeholder="Ingresar Telefono" />
- 
-        </Form.Group>
+    return (
+        <>
+        <div className="ms-5 me-5 mt-3">
+            <Form onSubmit={submitHandler} >
+            <h2>Completa tus datos para finalizar tu compra</h2>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Nombre</Form.Label>
+                <Form.Control name="nombre" type="text" placeholder="Ingresar nombre" />
+    
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Telefono</Form.Label>
+                <Form.Control name="telefono" type="text" placeholder="Ingresar Telefono" />
+    
+            </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control name="email" type="email" placeholder="Ingresar email" />
- 
-        </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control name="email" type="email" placeholder="Ingresar email" />
+    
+            </Form.Group>
 
-        <Button variant="primary" type="submit">
-            Comprar
-        </Button>
-        </Form>
+            <Button style={{width: '100%'}} variant="primary" type="submit">
+                Comprar
+            </Button>
+            </Form>
+        </div>
     
     
     </>)
