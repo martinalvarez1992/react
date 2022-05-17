@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import {Navbar, Nav, Container, Row, Col, NavDropdown, Card, Button} from 'react-bootstrap';
+import { Container, Row, Col, Card} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React,{ useEffect, useState, useContext } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
@@ -27,18 +27,18 @@ const ItemDetail = ({id, name, image, category, description, stock, price}) => {
  
     return (
         <>
-             <Container className="mt-3">
+            <Container className="mt-3">
                 <Row>
                     <Col>
                         <Card>
                             <Card.Img style={{ width: '30rem' }} src={image} alt="Card image" />
                         </Card>             
                     </Col>
-                    <Col>
+                    <Col className="mt-5">
                         <h2>{name}</h2>
                         <h5 className="card-title">${price}</h5>
                         <p className="card-title">{description}</p>
-                        <h5 className="card-title mt-4">Stock disponible:{stock}</h5>
+                        <h6 className="card-title mt-4">Stock disponible: {stock}</h6>
                         { isInCart(id) ? <Link class="btn btn-primary" to='/cart'> Ir al carrito <FontAwesomeIcon icon={faCartShopping} /></Link> 
                         : <ItemCount handleAdd={handleAdd} stock={stock} initial={1} /> }
  

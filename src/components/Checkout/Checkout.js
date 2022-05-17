@@ -1,13 +1,18 @@
 import { useContext, useState } from "react"
 import CartContext from "../../context/CartContext";
-import { Navbar, Nav, Container, Row, Col, NavDropdown, Card, Button, Form } from 'react-bootstrap';
+import { Button, Form} from 'react-bootstrap';
 import { addDoc, collection, getDoc, getDocs, writeBatch, query, where, documentId} from 'firebase/firestore'
 import { firestoreDb } from'../../services/firebase/index'
+import { NavLink } from 'react-router-dom';
+
+
+
 
 const Checkout = ()  => {
     const [loading, setLoading] = useState(false)
     const { cart, removeItem, getTotal, getQuantity } = useContext(CartContext)
     const [orderStatus, setOrderStatus] = useState(null)
+    const [orderId, setOrderId] = useState(null)
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -60,6 +65,7 @@ const Checkout = ()  => {
                   }).then(({ id }) => {
                       batch.commit()
                       console.log(`El id de la orden es ${id}`)
+                      setOrderId(`${id}`)
                       setOrderStatus('confirmed')
                        
                   }).catch(error => {
@@ -76,9 +82,13 @@ const Checkout = ()  => {
           if(orderStatus === 'confirmed') {
             return(
                 <>
-                <div>
-                <h1>Tu compra fue realizada con exito</h1>
-                 </div>
+                <div className="mt-3 ms-5 me-5 text-center">
+                    <h1>Tu compra fue realizada con exito</h1>
+                    <h3>El codigo de compra de tu orden es: {orderId} </h3>
+                    <h6>Asegurate de mantener este codigo guardado para cualquier consulta sobre tu orden.</h6>
+                    <Button as={NavLink} style={{width: '100%'}} className="btn btn-primary mt-5" to={`/`} > Volver al inicio </Button>
+
+                </div>
                 </>
             )
         } 

@@ -5,15 +5,14 @@ import CartContext from "../../context/CartContext";
 import { Link } from 'react-router-dom';
 
 
- const CartWidget = () => {
-  const { getQuantity } = useContext(CartContext)
+const CartWidget = () => {
+const { getQuantity } = useContext(CartContext)
   
   return(
     <>
-
-    <Link to='/cart' className="CartWidget" class="btn btn btn-outline-primary">
-        <FontAwesomeIcon icon={faCartShopping} /> {getQuantity()}  
-    </Link>
+      <Link to='/cart' className="CartWidget" class="btn btn btn-outline-primary">
+          <FontAwesomeIcon icon={faCartShopping} /> {getQuantity()}  
+      </Link>
     </>
   )
  }
