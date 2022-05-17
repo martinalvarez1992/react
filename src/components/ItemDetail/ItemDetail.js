@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom"
 import { Container, Row, Col, Card} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React,{ useEffect, useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
-import { useNavigate } from "react-router-dom";
 import CartContext from "../../context/CartContext";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -44,8 +43,7 @@ const ItemDetail = ({id, name, image, category, description, stock, price}) => {
  
                     </Col>
                 </Row>
-            </Container>        
-             
+            </Container>               
         </>     
     )
 }
