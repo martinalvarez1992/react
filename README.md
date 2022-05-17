@@ -47,7 +47,7 @@ Colección: Orders:
 
 ## Vista Previa  🖥️
 
-![Alt Text](https://github.com/martinalvarez1992/react/raw/main/mercadoverde.gif)
+![Alt Text](https://github.com/martinalvarez1992/react/raw/master/mercadoverde.gif)
  
 ## License
 
