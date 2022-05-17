@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Navbar, Nav, Container, NavDropdown, ButtonGroup, Button } from 'react-bootstrap';
+import { ButtonGroup, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from "react-router-dom"
-
 
 const ItemCount = ({stock = 0, initial = 1, handleAdd})=> {
 const [count, setCount] = useState(initial)

@@ -1,10 +1,6 @@
-import {Navbar, Nav, Container, NavDropdown, Card, Button} from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemCount from '../ItemCount/ItemCount';
 import { NavLink } from 'react-router-dom';
-
-  
-
 
 const Item = ({id, name, image, description, price}) => {
     
@@ -20,7 +16,6 @@ const Item = ({id, name, image, description, price}) => {
                     {description}
 
                     </Card.Text>
-                    {/* {<ItemCount   stock={8} initial={0} />} */}
                     <Button as={NavLink} style={{width: '100%'}} variant="primary" to={`/item/${id}`}  >Ver detalle</Button>
                 </Card.Body>
             </Card>       

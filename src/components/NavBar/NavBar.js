@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from '../CartWidget/CartWidget';
 import { useState, useEffect, useContext } from 'react'
 import { firestoreDb } from '../../services/firebase';
-import { getDocs, collection, query, orderBy } from 'firebase/firestore'
+import { getDocs, collection, query } from 'firebase/firestore'
 import { NavLink } from 'react-router-dom';
 import CartContext from '../../context/CartContext';
 

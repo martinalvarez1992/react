@@ -38,9 +38,11 @@ const ItemDetail = ({id, name, image, category, description, stock, price}) => {
                         <h5 className="card-title">${price}</h5>
                         <p className="card-title">{description}</p>
                         <h6 className="card-title mt-4">Stock disponible: {stock}</h6>
-                        { isInCart(id) ? <Link class="btn btn-primary" to='/cart'> Ir al carrito <FontAwesomeIcon icon={faCartShopping} /></Link> 
-                        : <ItemCount handleAdd={handleAdd} stock={stock} initial={1} /> }
- 
+                        { isInCart(id) ? 
+                        <Link class="btn btn-primary" to='/cart'> Ir al carrito <FontAwesomeIcon icon={faCartShopping} /></Link> 
+                        : 
+                        <ItemCount handleAdd={handleAdd} stock={stock} initial={1} /> 
+                        }
                     </Col>
                 </Row>
             </Container>               

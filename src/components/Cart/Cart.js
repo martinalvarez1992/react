@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 
 const Cart = () => {
-    const { cart, removeItem, getTotal, getQuantity, clearCart } = useContext(CartContext)
+    const { cart, removeItem, getTotal, clearCart } = useContext(CartContext)
 
     return (
         <>
@@ -29,7 +29,7 @@ const Cart = () => {
                         {
                             cart.map ( prod => 
                                 <tr key={prod.id}>
-                                    <td><img style={{ width: '5rem' }} src={prod.image}></img></td>
+                                    <td><img alt="" style={{ width: '5rem' }} src={prod.image}></img></td>
                                     <td>{prod.name}</td>
                                     <td>{prod.quantity}</td>
                                     <td>${prod.price}</td>
