@@ -45,7 +45,7 @@ Colección: Orders:
 | items | Array | Productos en la orden de compra |
 | total | Number | Total de la orden |
 
-## Vista Previa  🖥️
+## Vista Previa - Como realizar una compra  🖥️
 
 ![Alt Text](https://github.com/martinalvarez1992/react/raw/master/mercadoverde.gif)
  
